@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+
 import User from './User';
 import Pagination from './Pagination';
 import paginate from '../utils/paginate';
@@ -12,10 +14,6 @@ function Users({ users, onDelete, onBookmark }) {
     setCurrentPage(pageIndex);
   };
 
-  const paginate = (items, pageNumber, pageSize) => {
-    const startIndex = (pageNumber - 1) * pageSize;
-    return [...items].splice(startIndex, pageSize);
-  };
   const usersCrop = paginate(users, currentPage, PAGE_SIZE);
 
   return (
@@ -24,7 +22,7 @@ function Users({ users, onDelete, onBookmark }) {
         <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>
             <th scope="col" className="px-6 py-3">
-              Ім'я
+              Ім&apos;я
             </th>
             <th scope="col" className="px-6 py-3">
               Якості
@@ -67,5 +65,10 @@ function Users({ users, onDelete, onBookmark }) {
     </div>
   );
 }
+Users.propTypes = {
+  users: PropTypes.array,
+  onDelete: PropTypes.func,
+  onBookmark: PropTypes.func
+};
 
 export default Users;

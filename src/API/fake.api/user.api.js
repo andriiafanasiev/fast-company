@@ -4,39 +4,39 @@ const professions = {
   physics: { _id: '67rdca3eeb7f6fgeed471814', name: 'Фізик' },
   engineer: { _id: '67rdca3eeb7f6fgeed471822', name: 'Інженер' },
   actor: { _id: '67rdca3eeb7f6fgeed471824', name: 'Актор' },
-  cook: { _id: '67rdca3eeb7f6fgeed471829', name: 'Кухар' },
+  cook: { _id: '67rdca3eeb7f6fgeed471829', name: 'Кухар' }
 };
 const qualities = {
   tedious: {
     _id: '67rdca3eeb7f6fgeed471198',
     name: 'Нудний',
-    color: 'blue-500',
+    color: 'blue-500'
   },
   strange: {
     _id: '67rdca3eeb7f6fgeed471100',
     name: 'Дивний',
-    color: 'purple-500',
+    color: 'purple-500'
   },
   buller: {
     _id: '67rdca3eeb7f6fgeed4711012',
     name: 'Троль',
-    color: 'green-500',
+    color: 'green-500'
   },
   alcoholic: {
     _id: '67rdca3eeb7f6fgeed471101',
     name: 'Алкоголік',
-    color: 'red-500',
+    color: 'red-500'
   },
   handsome: {
     _id: '67rdca3eeb7f6fgeed471102',
     name: 'Красень',
-    color: 'teal-500',
+    color: 'teal-500'
   },
   uncertain: {
     _id: '67rdca3eeb7f6fgeed471103',
     name: 'Невпевнений',
-    color: 'zinc-600',
-  },
+    color: 'zinc-600'
+  }
 };
 
 const users = [
@@ -47,7 +47,7 @@ const users = [
     qualities: [qualities.tedious, qualities.uncertain, qualities.strange],
     completedMeetings: 36,
     rate: 2.5,
-    bookmark: false,
+    bookmark: false
   },
   {
     _id: '67rdca3eeb7f6fgeed471816',
@@ -56,7 +56,7 @@ const users = [
     qualities: [qualities.buller, qualities.handsome, qualities.alcoholic],
     completedMeetings: 15,
     rate: 2.5,
-    bookmark: false,
+    bookmark: false
   },
   {
     _id: '67rdca3eeb7f6fgeed471817',
@@ -65,7 +65,7 @@ const users = [
     qualities: [qualities.buller],
     completedMeetings: 247,
     rate: 3.5,
-    bookmark: false,
+    bookmark: false
   },
   {
     _id: '67rdca3eeb7f6fgeed471818',
@@ -74,7 +74,7 @@ const users = [
     qualities: [qualities.uncertain],
     completedMeetings: 148,
     rate: 3.5,
-    bookmark: false,
+    bookmark: false
   },
   {
     _id: '67rdca3eeb7f6fgeed471819',
@@ -83,7 +83,7 @@ const users = [
     qualities: [qualities.strange, qualities.tedious],
     completedMeetings: 37,
     rate: 4.6,
-    bookmark: false,
+    bookmark: false
   },
   {
     _id: '67rdca3eeb7f6fgeed471820',
@@ -92,7 +92,7 @@ const users = [
     qualities: [qualities.strange, qualities.uncertain],
     completedMeetings: 147,
     rate: 3.5,
-    bookmark: false,
+    bookmark: false
   },
   {
     _id: '67rdca3eeb7f6fgeed471821',
@@ -101,7 +101,7 @@ const users = [
     qualities: [qualities.strange, qualities.tedious],
     completedMeetings: 72,
     rate: 3.5,
-    bookmark: false,
+    bookmark: false
   },
   {
     _id: '67rdca3eeb7f6fgeed471822',
@@ -110,7 +110,7 @@ const users = [
     qualities: [qualities.handsome],
     completedMeetings: 72,
     rate: 5,
-    bookmark: false,
+    bookmark: false
   },
   {
     _id: '67rdca3eeb7f6fgeed471823',
@@ -119,7 +119,7 @@ const users = [
     qualities: [qualities.strange, qualities.uncertain],
     completedMeetings: 17,
     rate: 4.5,
-    bookmark: false,
+    bookmark: false
   },
   {
     _id: '67rdca3eeb7f6fgeed471824',
@@ -128,7 +128,7 @@ const users = [
     qualities: [qualities.handsome, qualities.buller],
     completedMeetings: 17,
     rate: 4.5,
-    bookmark: false,
+    bookmark: false
   },
   {
     _id: '67rdca3eeb7f6fgeed47181f',
@@ -137,7 +137,7 @@ const users = [
     qualities: [qualities.uncertain, qualities.strange],
     completedMeetings: 434,
     rate: 3.5,
-    bookmark: false,
+    bookmark: false
   },
   {
     _id: '67rdca3eeb7f6fgeed47181r',
@@ -146,8 +146,8 @@ const users = [
     qualities: [qualities.handsome],
     completedMeetings: 434,
     rate: 5,
-    bookmark: false,
-  },
+    bookmark: false
+  }
 ];
 export function fetchAll() {
   return users;

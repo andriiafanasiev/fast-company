@@ -1,6 +1,8 @@
 import React from 'react';
 import Qualitie from './Qualitie';
 import Bookmark from './Bookmark';
+import PropTypes from 'prop-types';
+
 function User({
   _id,
   name,
@@ -10,7 +12,7 @@ function User({
   rate,
   onDelete,
   onBookmark,
-  isBookmarked,
+  isBookmarked
 }) {
   return (
     <tr
@@ -53,5 +55,17 @@ function User({
     </tr>
   );
 }
+
+User.propTypes = {
+  _id: PropTypes.number,
+  name: PropTypes.string,
+  profession: PropTypes.string,
+  qualities: PropTypes.array,
+  completedMeetings: PropTypes.number,
+  rate: PropTypes.number,
+  onDelete: PropTypes.func,
+  onBookmark: PropTypes.func,
+  isBookmarked: PropTypes.bool
+};
 
 export default User;

@@ -1,11 +1,4 @@
-const professions = {
-  doctor: { _id: '67rdca3eeb7f6fgeed471818', name: 'Лікар' },
-  waiter: { _id: '67rdca3eeb7f6fgeed471820', name: 'Офіціант' },
-  physics: { _id: '67rdca3eeb7f6fgeed471814', name: 'Фізик' },
-  engineer: { _id: '67rdca3eeb7f6fgeed471822', name: 'Інженер' },
-  actor: { _id: '67rdca3eeb7f6fgeed471824', name: 'Актор' },
-  cook: { _id: '67rdca3eeb7f6fgeed471829', name: 'Кухар' }
-};
+import { professions } from './professions.api';
 const qualities = {
   tedious: {
     _id: '67rdca3eeb7f6fgeed471198',

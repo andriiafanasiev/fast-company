@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Users from './components/Users';
-import SearchStatus from './components/SearchStatus';
+
 import { useState } from 'react';
 import API from './API';
 
@@ -28,7 +28,6 @@ function App() {
 
   return (
     <div className="App bg-gray-800">
-      <SearchStatus usersCount={users.length} />
       <Users
         users={users}
         onBookmark={handleBookmark}

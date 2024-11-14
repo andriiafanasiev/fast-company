@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import User from './User';
 import Pagination from './Pagination';
 import paginate from '../utils/paginate';
+import SearchStatus from './SearchStatus';
 import GroupList from './GroupList';
 import API from '../API';
 
@@ -11,7 +12,6 @@ function Users({ users, onDelete, onBookmark }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [professions, setProfessions] = useState();
   const [selectedProf, setSelectedProf] = useState(null);
-  const usersCount = users.length;
   const PAGE_SIZE = 4;
 
   useEffect(() => {
@@ -32,9 +32,11 @@ function Users({ users, onDelete, onBookmark }) {
     ? users.filter((user) => user.profession._id === selectedProf._id)
     : users;
   const usersCrop = paginate(filteredUsers, currentPage, PAGE_SIZE);
+  const usersCount = filteredUsers.length;
 
   return (
     <div className="relative overflow-x-auto">
+      <SearchStatus usersCount={usersCount} />
       {professions && (
         <>
           <GroupList

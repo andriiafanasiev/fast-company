@@ -10,26 +10,45 @@ import API from '../API';
 function Users({ users, onDelete, onBookmark }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [professions, setProfessions] = useState();
-  const count = users.length;
+  const [selectedProf, setSelectedProf] = useState(null);
+  const usersCount = users.length;
   const PAGE_SIZE = 4;
 
   useEffect(() => {
     API.proffesions.fetchAll().then((data) => setProfessions(data));
   }, []);
 
+  const clearFilter = () => {
+    setSelectedProf(null);
+  };
+
   const handlePageChange = (pageIndex) => {
     setCurrentPage(pageIndex);
   };
-  const handleProfessionSelect = (params) => {
-    console.log(params);
+  const handleProfessionSelect = (item) => {
+    setSelectedProf(item);
   };
-
-  const usersCrop = paginate(users, currentPage, PAGE_SIZE);
+  const filteredUsers = selectedProf
+    ? users.filter((user) => user.profession._id === selectedProf._id)
+    : users;
+  const usersCrop = paginate(filteredUsers, currentPage, PAGE_SIZE);
 
   return (
     <div className="relative overflow-x-auto">
       {professions && (
-        <GroupList items={professions} onItemSelect={handleProfessionSelect} />
+        <>
+          <GroupList
+            items={professions}
+            onItemSelect={handleProfessionSelect}
+            selectedItem={selectedProf}
+          />
+          <button
+            className="bg-gray-500 text-white rounded-md mb-2 hover:bg-gray-600 mt-2 px-3 py-2"
+            onClick={clearFilter}
+          >
+            Clear
+          </button>
+        </>
       )}
       <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -70,7 +89,7 @@ function Users({ users, onDelete, onBookmark }) {
         </tbody>
       </table>
       <Pagination
-        itemsCount={count}
+        itemsCount={usersCount}
         pageSize={PAGE_SIZE}
         onPageChange={handlePageChange}
         currentPage={currentPage}
